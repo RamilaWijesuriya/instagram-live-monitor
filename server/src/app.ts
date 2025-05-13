@@ -5,6 +5,10 @@ import { Server as SocketIOServer } from 'socket.io';
 import apiRouter from './routes/api.js';
 import socketRouter from './routes/socket.js';
 import { errorHandler } from './utils/errorHandler.js';
+import mongoose from 'mongoose';
+
+// Suppress Mongoose deprecation warning
+mongoose.set('strictQuery', true);
 
 const app = express();
 const server = http.createServer(app);

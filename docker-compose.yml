@@ -19,7 +19,7 @@ services:
   client:
     build: ./client
     ports:
-      - '3003:3000'
+      - '3003:3001'
 
 volumes:
   mongodata:

@@ -5,7 +5,8 @@ import { resolve } from 'path';
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000,
+    host: '0.0.0.0',
+    port: 3001,
     proxy: {
       '/api': 'http://localhost:5000',
       '/socket.io': {
@@ -23,7 +24,8 @@ export default defineConfig({
   },
   // Add SPA fallback for dev server
   preview: {
-    port: 3000,
+    host: '0.0.0.0',
+    port: 3001,
     // Vite's preview server uses connect-history-api-fallback by default
   },
 });

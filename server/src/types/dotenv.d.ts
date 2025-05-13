@@ -15,5 +15,4 @@ declare module 'dotenv' {
   function config(options?: DotenvConfigOptions): DotenvConfigOutput;
 
   export { config, DotenvConfigOptions, DotenvConfigOutput };
-  export default { config };
 }

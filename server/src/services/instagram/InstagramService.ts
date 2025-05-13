@@ -30,7 +30,11 @@ export default class InstagramService {
       const userId = await ig.user.getIdByUsername(account.username);
       let lives: any[] = [];
       try {
-        const broadcast = await ig.live.create({ targetUserId: userId });
+        const broadcast = await ig.live.create({
+          previewHeight: 1920,
+          previewWidth: 1080,
+          message: 'Live stream started',
+        });
         lives = [broadcast];
       } catch {
         lives = [];

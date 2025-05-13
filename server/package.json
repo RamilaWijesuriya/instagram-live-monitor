@@ -8,8 +8,11 @@
     "build": "tsc",
     "dev": "nodemon --watch src --ext ts,json --exec \"node --loader ts-node/esm src/index.ts\"",
     "start": "node dist/index.js",
-    "lint": "npx eslint . --config eslint.config.js",
-    "test": "jest"
+    "lint": "ts-node scripts/run-and-log.ts npx eslint . --cache --format=json",
+    "lint:retry": "ts-node scripts/rerun-errors.ts",
+    "test": "jest",
+    "test:log": "ts-node scripts/run-and-log.ts npm test",
+    "test:retry": "ts-node scripts/rerun-errors.ts"
   },
   "author": "",
   "license": "MIT",
